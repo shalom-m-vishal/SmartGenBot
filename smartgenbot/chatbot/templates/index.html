@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SMARTGENBOT</title>
+  <!-- Load the CSS file using Django static tag -->
+  <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+  <!-- Sidebar -->
+  <div id="sidebar" class="sidebar">
+    <a href="#" class="close-btn" onclick="closeSidebar()">×</a>
+    <a href="#">Home</a>
+    <a href="#">Settings</a>
+    <a href="#">Help</a>
+  </div>
+
+  <!-- 3-dot menu -->
+  <div class="header">
+    <span class="menu-btn" onclick="openSidebar()">&#9776;</span>
+    <h1>SMARTGENBOT</h1>
+    <div class="dot-menu">
+      <span class="dot" onclick="toggleDropdown()">⋮</span>
+      <div id="dropdown" class="dropdown-content">
+        <a href="#">New Chat</a>
+        <a href="#">Profile</a>
+        <a href="#">Logout</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Chat Container -->
+  <div class="chat-container">
+        <div class="chat-box">
+            <div id="chat-output" class="chat-output"></div>
+            <div class="chat-input">
+                <input type="text" id="user-input" placeholder="Type your message..." />
+                <button id="send-btn">Send</button>
+            </div>
+        </div>
+    </div>
+
+  <!-- Load the JS file using Django static tag -->
+  <script src="{% static 'script.js' %}"></script>
+</body>
+</html>
